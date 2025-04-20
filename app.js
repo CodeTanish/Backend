@@ -5,6 +5,8 @@ const router = require('./router/contact.route')
 const connectTo = require('./config/db')
 const cors = require('cors')
 const morgan = require('morgan')
+const PORT = process.env.Backend_Port
+const ORIGIN = process.env.Origin_Url
 connectTo()
 
 
@@ -13,13 +15,13 @@ app.use(express.urlencoded({extended: true}))
 app.use(morgan('dev'))
 
 app.use(cors({
-    origin: ['https://codetanish.vercel.app/'],
+    origin: [ORIGIN],
     methods: ['POST', 'GET']
 }))
 
 app.use('/api', router)
 
 
-app.listen(5000, ()=>{
+app.listen(PORT, ()=>{
     console.log('server is running');
 })
