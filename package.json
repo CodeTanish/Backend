@@ -4,9 +4,10 @@
   "description": "this module handle the nextjs functionality and make this web application more scaleable",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon"
-  },
+  "dev": "npx nodemon",                
+  "build": "echo 'No build step needed for backend'",
+  "start": "node app.js"             
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
